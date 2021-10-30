@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>pokeball</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div id="pokeball-1" class="pokeball">
+  <button id="toggle-button"></button>
+  <article>
+    <h1><span>Pikachu</span><span>#025</span></h1>
+    <div class="species">Mouse Pokemon</div>
+    <p>Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.</p>
+    <ul>
+      <li>
+        <label><span>HP</span><span>35</span></label>
+        <meter min="266" low="293" high="333" optimum="360" max="360" value="330">330/360</meter>
+      </li>
+      <li>
+        <label><span>Speed</span><span>90</span></label>
+        <meter min="184" low="236" high="276" optimum="328" max="328" value="280">280/328</meter>
+      </li>
+      <li>
+        <label><span>Attack</span><span>55</span></label>
+        <meter min="155" low="204" high="244" optimum="293" max="293" value="270">280/293</meter>
+      </li>
+      <li>
+        <label><span>Defense</span><span>40</span></label>
+        <meter min="144" low="192" high="232" optimum="280" max="280" value="190">190/280</meter>
+      </li>
+      <li>
+        <label><span>Sp. Atk</span><span>50</span></label>
+        <meter min="200" low="254" high="294" optimum="348" max="348" value="340">340/348</meter>
+      </li>
+      <li>
+        <label><span>Sp. Def:</span><span>50</span></label>
+        <meter min="157" low="206" high="246" optimum="295" max="295" value="230">230/295</meter>
+      </li>
+    </ul>
+  </article>
+</div>
+<div class="pokemon">
+  <img src="./pikachu.gif" alt="pikachu" />
+  <div class="tags">
+    <span class="fire">Eletric</span>
+    <span class="flying">Mouse</span>
+    <span class="height">0.4 m</span>
+    <span class="weight">6.0 kg</span>
+  </div>
+</div>
+<svg id="summon-1" width="600px" height="500px" class="summon hidden">
+  <path 
+     class="path"
+     d="M100 250 L280 150 L460 215"
+     fill="none"
+     stroke="black"
+     stroke-width="15px"
+     stroke-dasharray="100%"
+     stroke-dashoffset="100%" />
+</svg>
+<svg width="500px" height="500px" class="hidden">
+  <defs>
+    <filter id="spawn-line">
+      <feTurbulence 
+         id="line-turbulence"
+         in="SourceGraphic"
+         type="fractalNoise"
+         baseFrequency="0.013"
+         numOctaves="1"
+         result="TURBULENCE_1" />
+      <feDisplacementMap
+         id="line-displacement"
+         in="SourceGraphic"
+         in2="TURBULENCE_1"
+         scale="200"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         result="DISPLACEMENT_1" />
+      <feFlood
+         in="DISPLACEMENT_1"
+         flood-color="#fffdc4"
+         flood-opacity="1"
+         result="FLOOD_1" />
+      <feComposite
+         in="FLOOD_1"
+         in2="DISPLACEMENT_1"
+         operator="in"
+         result="COMPOSITE_1" />
+    </filter>
+    <filter id="spawn-pokemon">
+      <feTurbulence 
+         id="pokemon-turbulence"
+         in="SourceGraphic"
+         type="fractalNoise"
+         baseFrequency="0.015"
+         numOctaves="1"
+         result="TURBULENCE_1" />
+      <feDisplacementMap
+         id="pokemon-displacement"
+         in="SourceGraphic"
+         in2="TURBULENCE_1"
+         scale="100"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         result="DISPLACEMENT_1" />
+      <feFlood
+         in="DISPLACEMENT_1"
+         flood-color="#fffdc4"
+         flood-opacity="1"
+         result="FLOOD_1" />
+      <feComposite
+         in="FLOOD_1"
+         in2="DISPLACEMENT_1"
+         operator="in"
+         result="COMPOSITE_1" />
+    </filter>
+    <filter id="retrieve-line">
+      <feTurbulence 
+         in="SourceGraphic"
+         type="fractalNoise"
+         baseFrequency="0.015"
+         numOctaves="1"
+         result="TURBULENCE_1" />
+      <feDisplacementMap
+         in="SourceGraphic"
+         in2="TURBULENCE_1"
+         scale="200"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         result="DISPLACEMENT_1" />
+      <feFlood
+         in="DISPLACEMENT_1"
+         flood-color="#fec9c9"
+         flood-opacity="1"
+         result="FLOOD_1" />
+      <feComposite
+         in="FLOOD_1"
+         in2="DISPLACEMENT_1"
+         operator="in"
+         result="COMPOSITE_1" />
+    </filter>
+    <filter id="retrieve-pokemon">
+      <feTurbulence 
+         id="retrieve-turbulence"
+         in="SourceGraphic"
+         type="fractalNoise"
+         baseFrequency="0.015"
+         numOctaves="1"
+         result="TURBULENCE_1" />
+      <feDisplacementMap
+         id="retrieve-displacement"
+         in="SourceGraphic"
+         in2="TURBULENCE_1"
+         scale="100"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         result="DISPLACEMENT_1" />
+      <feFlood
+         in="DISPLACEMENT_1"
+         flood-color="#fec9c9"
+         flood-opacity="1"
+         result="FLOOD_1" />
+      <feComposite
+         in="FLOOD_1"
+         in2="DISPLACEMENT_1"
+         operator="in"
+         result="COMPOSITE_1" />
+    </filter>
+  </defs>
+</svg>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+  <script src="script.js"></script>
+</body>
+</html>

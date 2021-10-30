@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>pokeball</title>
+  <link rel="stylesheet" type="text/css" href="Squirtle.css"/>
+
+</head>
+<body>
+    <div id="principal" >
+    
+        <!-- PARTE BRANCA --> 
+        <div id="corpo" >
+         <!-- DESCRIÇÃO --> 
+            <div id="descricao">
+            <p><strong > Descrição do produto: </strong> </p>
+            <p id="poke">Pokémon (ポケモン Pokemon) é uma especie de criaturas criadas pela The Pokémon Company, tendo sido criados por Satoshi Tajiri em 1995. Eles são amigaveis e calmos, eles deixam os seres humanos os treinarem para lutarem um contra o outro como um esporte.
+                
+                Com o sucesso eminente desses animais, foram criados jogos lançados para o Game Boy original, desenvolvidos pela Game Freak e publicados pela Nintendo. Atualmente, a franquia se estende em jogos, cartas colecionáveis, série de televisão, 
+                
+                além de filmes, mangás e brinquedos. Pokémon é a segunda franquia de mídia de jogos mais bem sucedida e lucrativa do mundo, atrás da franquia de Mario que também pertence a Nintendo.
+                
+                As vendas dos jogos (incluindo home console games, como Hey You, Pikachu!, para Nintendo 64) acumularam mais de 200 milhões de cópias vendidas.              
+                
+                Até 2021, os únicos que tinham acesso aos pokemons eram os seus tiranos criadores, a Equipe Rocket decidiu entrar em ação e mudar isso! Você agora, pode deixar de ve-los apenas por telas ou cards e ter o seu proprio Pokemon.
+             </div>
+
+         <!-- POKEMON -->     
+            <div id="pokeball-1" class="pokeball">
+                <button id="toggle-button"></button>
+                <article>
+                <h1><span>Squirtle</span><span>#007</span></h1>
+                <div class="species">Tiny Turtle Pokemon</div>
+                <p>When it retracts its long neck into its shell, it squirts out water with vigorous force.</p>
+                <ul>
+                    <li>
+                    <label><span>HP</span><span>44</span></label>
+                    <meter min="266" low="293" high="333" optimum="360" max="360" value="330">330/360</meter>
+                    </li>
+                    <li>
+                    <label><span>Speed</span><span>43</span></label>
+                    <meter min="184" low="236" high="276" optimum="328" max="328" value="280">280/328</meter>
+                    </li>
+                    <li>
+                    <label><span>Attack</span><span>48</span></label>
+                    <meter min="155" low="204" high="244" optimum="293" max="293" value="270">280/293</meter>
+                    </li>
+                    <li>
+                    <label><span>Defense</span><span>65</span></label>
+                    <meter min="144" low="192" high="232" optimum="280" max="280" value="190">190/280</meter>
+                    </li>
+                    <li>
+                    <label><span>Sp. Atk</span><span>50</span></label>
+                    <meter min="200" low="254" high="294" optimum="348" max="348" value="340">340/348</meter>
+                    </li>
+                    <li>
+                    <label><span>Sp. Def:</span><span>64</span></label>
+                    <meter min="157" low="206" high="246" optimum="295" max="295" value="230">230/295</meter>
+                    </li>
+                </ul>
+                </article>
+            </div>
+            <div class="pokemon">
+                <img src="./squirtle.gif" alt="Squirtle" />
+                <div class="tags">
+                <span class="fire">Water</span>
+                <span class="flying">Water</span>
+                <span class="height">0.5 m</span>
+                <span class="weight">9.0 kg</span>
+                </div>
+            </div>
+            <svg id="summon-1" width="600px" height="500px" class="summon hidden">
+                <path 
+                class="path"
+                d="M100 250 L280 150 L460 215"
+                fill="none"
+                stroke="black"
+                stroke-width="15px"
+                stroke-dasharray="100%"
+                stroke-dashoffset="100%" />
+            </svg>
+            <svg width="500px" height="500px" class="hidden">
+            <defs>
+            <filter id="spawn-line">
+            <feTurbulence 
+                id="line-turbulence"
+                in="SourceGraphic"
+                type="fractalNoise"
+                baseFrequency="0.013"
+                numOctaves="1"
+                result="TURBULENCE_1" />
+            <feDisplacementMap
+                id="line-displacement"
+                in="SourceGraphic"
+                in2="TURBULENCE_1"
+                scale="200"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                result="DISPLACEMENT_1" />
+            <feFlood
+                in="DISPLACEMENT_1"
+                flood-color="#fffdc4"
+                flood-opacity="1"
+                result="FLOOD_1" />
+            <feComposite
+                in="FLOOD_1"
+                in2="DISPLACEMENT_1"
+                operator="in"
+                result="COMPOSITE_1" />
+            </filter>
+            <filter id="spawn-pokemon">
+            <feTurbulence 
+                id="pokemon-turbulence"
+                in="SourceGraphic"
+                type="fractalNoise"
+                baseFrequency="0.015"
+                numOctaves="1"
+                result="TURBULENCE_1" />
+            <feDisplacementMap
+                id="pokemon-displacement"
+                in="SourceGraphic"
+                in2="TURBULENCE_1"
+                scale="100"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                result="DISPLACEMENT_1" />
+            <feFlood
+                in="DISPLACEMENT_1"
+                flood-color="#fffdc4"
+                flood-opacity="1"
+                result="FLOOD_1" />
+            <feComposite
+                in="FLOOD_1"
+                in2="DISPLACEMENT_1"
+                operator="in"
+                result="COMPOSITE_1" />
+            </filter>
+            <filter id="retrieve-line">
+            <feTurbulence 
+                in="SourceGraphic"
+                type="fractalNoise"
+                baseFrequency="0.015"
+                numOctaves="1"
+                result="TURBULENCE_1" />
+            <feDisplacementMap
+                in="SourceGraphic"
+                in2="TURBULENCE_1"
+                scale="200"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                result="DISPLACEMENT_1" />
+            <feFlood
+                in="DISPLACEMENT_1"
+                flood-color="#fec9c9"
+                flood-opacity="1"
+                result="FLOOD_1" />
+            <feComposite
+                in="FLOOD_1"
+                in2="DISPLACEMENT_1"
+                operator="in"
+                result="COMPOSITE_1" />
+            </filter>
+            <filter id="retrieve-pokemon">
+            <feTurbulence 
+                id="retrieve-turbulence"
+                in="SourceGraphic"
+                type="fractalNoise"
+                baseFrequency="0.015"
+                numOctaves="1"
+                result="TURBULENCE_1" />
+            <feDisplacementMap
+                id="retrieve-displacement"
+                in="SourceGraphic"
+                in2="TURBULENCE_1"
+                scale="100"
+                xChannelSelector="R"
+                yChannelSelector="G"
+                result="DISPLACEMENT_1" />
+            <feFlood
+                in="DISPLACEMENT_1"
+                flood-color="#fec9c9"
+                flood-opacity="1"
+                result="FLOOD_1" />
+            <feComposite
+                in="FLOOD_1"
+                in2="DISPLACEMENT_1"
+                operator="in"
+                result="COMPOSITE_1" />
+            </filter>
+            </defs>
+            </svg>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+            <script src="carrinho.js"></script>
+
+
+        <!-- ESTRELAS --> 
+        <div id="barra">
+            <a href="javascript:void(0)" onclick="Avaliar(1)">
+            <img  src="star0.png"id="s1"></a>
+                    
+            <a href="javascript:void(0)" onclick="Avaliar(2)">
+            <img  src="star0.png" id="s2"></a>
+                    
+            <a href="javascript:void(0)" onclick="Avaliar(3)">
+            <img src="star0.png" id="s3"></a>
+                    
+            <a href="javascript:void(0)" onclick="Avaliar(4)">
+            <img src="star0.png" id="s4"></a>
+                    
+            <a href="javascript:void(0)" onclick="Avaliar(5)">
+            <img src="star0.png" id="s5"></a>
+                
+            <p id="rating"></p>
+                
+            <!-- VALOR / COMPRAR --> 
+            <p id="nome"><strong>POKEMON SQUIRTLE - 1º Geração </strong> </p>
+            <p id=cod> (Cod: 00007) </p>
+            <p id="preco"> <strong>R$ 1.000,00 à vista </strong> </p>
+
+            <img id="cartao" src="cartao.png"> 
+            <p><strong id="parcela"> ou até 12x de R$83,33 sem juros</strong> </p>
+
+
+            <button id="comprar"><strong>COMPRAR</strong></button>
+            <button id="carrin"><img src="carrim.png"></button>
+
+            <!-- FRETE --> 
+            <div id=calcfrete>
+                <p><strong id="calcu">Calcule o frete e o prazo de entrega: </strong> </p>
+                <input type="inicio" id="cep"></p> 
+                <button id="frete" onclick="cep()"><strong>CALCULAR</strong></button>
+
+                <p><strong class="resultado"> </strong></p>
+            
+            </div> 
+            
+        </div>
+
+
+        </div>
+
+        </div>
+    </body>
+</html>

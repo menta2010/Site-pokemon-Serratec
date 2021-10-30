@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+.hidden {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  height: 1px;
+}
+
+:root {
+  --background-white: #fffffd;
+  --background-blue: #7dabdc;
+  --pokeball-red: #fd5365;
+  --pokeball-grey: #f0f0f0;
+  --pokeball-black: #615e69;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-blue);
+  background: #EFEFBB;
+	background: linear-gradient(to right, rgb(197, 230, 236), rgb(239, 187, 230));
+	font-family: rubik;
+}
+
+.pokeball {
+  min-width: 300px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: grey;
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
+  background-position: 50px 200px;
+  transition: all 0.5s ease-in 0.3s;
+}
+
+.pokeball.open {
+  background-color: var(--background-white);
+  transition: all 0.5s ease-in;
+}
+
+.pokeball button {
+  border: 1px solid var(--pokeball-black);
+  background-color: var(--pokeball-grey);
+  box-shadow: 
+    inset 0px -3px 0px 0px #bdbdbd,
+    inset 0px -4px 0px 0px var(--pokeball-black),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 24px var(--pokeball-black);
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transition: top 1s;
+  transition-delay: 0.3s;
+  cursor: pointer;
+}
+
+.pokeball button:active {
+  outline: 0;
+  box-shadow: 
+    inset 0px 3px 0px 0px #bdbdbd,
+    inset 0px 4px 0px 0px var(--pokeball-black),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 24px var(--pokeball-black);
+}
+
+.pokeball button:focus {
+  outline: 0;
+}
+
+.pokeball.open button {
+  top: 10%;
+  box-shadow: 
+    inset 0px -3px 0px 0px #bdbdbd,
+    inset 0px -4px 0px 0px var(--pokeball-black),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 24px var(--pokeball-black),
+    0px 5px 0px 24px rgba(0,0,0,0.1);
+  transition-delay: 0s;
+}
+
+.pokeball.open button:active {
+  outline: 0;
+  box-shadow: 
+    inset 0px 3px 0px 0px #bdbdbd,
+    inset 0px 4px 0px 0px var(--pokeball-black),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 10px var(--pokeball-grey),
+    0px 0px 0px 24px var(--pokeball-black),
+    0px 5px 0px 24px rgba(0,0,0,0.1);
+}
+
+.pokeball::before {
+  content: '';
+  width: 100%;
+  top: 0;
+  background-color: var(--pokeball-red);
+  position: absolute;
+  height: calc(50% - 9px);
+  border-bottom: 18px solid var(--pokeball-black);
+  transition: all 1s;
+  transition-delay: 0.3s;
+}
+
+.pokeball.open::before {
+  top: -40%;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.1);
+  transition-delay: 0s;
+}
+
+.pokeball::after {
+  content: '';
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: calc(50% + 9px);
+  height: calc(50% - 2px);
+  border-top: 2px solid var(--pokeball-black);
+  background-image: 
+    radial-gradient(var(--pokeball-black) 35px, transparent 35px),
+    radial-gradient(black 35px, transparent 36px),
+    radial-gradient(var(--pokeball-black) 47px, transparent 47px);
+  background-size: 96px 96px;
+  background-position: 50% -57px;
+  background-repeat: no-repeat;
+  transition: all 1s;
+  transition-delay: 0.3s;
+}
+
+.pokeball.open::after {
+  top: 90%;
+  box-shadow: 0px -5px 0px 0px rgba(0, 0, 0, 0.1);
+  transition-delay: 0s;
+}
+
+.pokeball button svg {
+  margin: 0 0 4px 4px;
+}
+
+.pokeball button:active svg {
+  margin: 4px 0 0 4px;
+}
+
+.pokeball article {
+  padding: 0 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pokeball h1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 21px;
+  font-weight: normal;
+  color: #111;
+}
+
+.pokeball h1 span:last-child {
+  font-weight: lighter;
+}
+
+.pokeball p {
+  margin: 20px 0;
+}
+
+.pokeball ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1fr 1fr 1fr;
+  column-gap: 22px;
+}
+
+.pokeball li {
+  margin: 0 0 4px 0;
+}
+
+.pokeball label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.pokeball label span:last-child {
+  color: black;
+}
+
+.pokeball meter {
+  width: 100%;
+  height: 6px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+  color: transparent;
+  font-size: 0;
+}
+
+.pokeball meter::-webkit-meter-bar {
+  background: none;
+  background-color: #d8d8d8;
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.pokeball meter::-webkit-meter-optimum-value {
+  background: none;
+  background-color: #60ca60;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.pokeball meter::-webkit-meter-suboptimum-value {
+  background: none;
+  background-color: #f0c85c;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.pokeball meter::-webkit-meter-even-less-good-value {
+  background: none;
+  background-color: #ee7863;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.tags span {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-right: 4px;
+}
+
+span.fire {
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  background-color: #fb613e;
+}
+
+span.flying {
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  background-color: #5684b5;
+}
+
+.pokemon {
+  position: relative;
+  text-align: center;
+  margin-left: 60px;
+}
+
+.pokemon img {
+  width: 400px;
+  background-image: radial-gradient(#d35a2a 70%, transparent 60%);
+  background-size: 300px 300px;
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+  filter: url(#test);
+}
+
+.summon {
+  position: absolute;
+}
+
+@media only screen and (min-width: 765px) {
+  body {
+    transform: scale(0.8)
+  }
+}

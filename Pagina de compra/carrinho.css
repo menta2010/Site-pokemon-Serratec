@@ -1,0 +1,142 @@
+body{
+   background-color: rgba(245, 245, 53, 0.671);
+   margin:0;
+   padding: 0;
+}
+#corpo{
+    background-color: white;
+    width: 100%;
+    height: 400px;
+    box-shadow: 2px 2px 2px gray;
+    position: absolute ;
+    top: 200px;
+    bottom: 100px;
+}
+#artigos{
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    float:left;
+}
+#artigos > img{
+    width: 100%; /* A IMAGEM VAI FICAR 100% DENTRO DA DIV */
+    height: 100%;
+    
+}
+
+#barra{
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;   
+    float: right;
+}
+#comprar{
+    width: 200px;
+    height: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-size: x-large;
+    border-radius: 10px; 
+    box-shadow: 1px 1px 1px gray;
+    position:absolute;
+    right:0px;
+    bottom: 160px;
+    position: fixed;
+    /* ANIMAÇÃO BOTÃO */
+    animation-name: myframes;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -o-animation-timing-function: ease-in-out;
+}
+
+@keyframes myframes{
+0%{
+    background-color: rgb(240, 240, 89);
+}
+25%{
+    background-color:rgb(243, 243, 75);
+}
+50%{
+    background-color: rgb(243, 243, 41);
+}
+75%{
+    background-color: rgb(248, 248, 28);
+}100%{
+    background-color: yellow;
+}
+}
+
+#carrin{
+    background-color:blanchedalmond;
+    width: 200px;
+    height: 60px;
+    border-radius: 10px; 
+    box-shadow: 1px 1px 1px gray;
+    position:absolute;
+    right:0px;
+    bottom: 95px;
+    position: fixed;
+}
+
+#carrin:hover{
+    background-color: yellow;
+}
+#nome{
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+    margin: 0;
+    border: 1px solid black;
+}
+#cod{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+    margin:0;
+    border: 1px solid black;
+}
+#preco{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: blue;
+    font-size: xx-large;
+    margin-top: 10px;
+    border: 1px solid black;
+}
+#cartao{
+    border: 4px solid;
+    position: absolute;
+    right:575px;
+    bottom:200px;
+    
+}
+#parcela{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+    border: 4px solid black;
+    width: 250px;
+    height: 25px;
+    position: absolute;
+    bottom: 195px;
+    right:315px;
+    
+}
+
+#frete{
+    background-color: grey;
+    width: 80px;
+    height: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+    text-align: center;
+    float: left;
+    border-radius: 10px; 
+    box-shadow: 1px 1px 1px gray;
+}
+#calcfrete{
+    border: 4px solid black;
+    width: 180px;
+    height: 150px;
+    position: absolute;
+    right: 300px;
+    bottom: 10px;
+
+}

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .links {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    display: flex;
+  }
+  
+  .links label {
+    background-color: rgba(255,255,255,0.3);
+    padding: 10px 0;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all .4s;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 100%;
+    color: #33363a;
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+  
+  .links label:hover {
+    background-color: rgba(255,255,255,0.7);
+  }
+  
+  .scroll {
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .scroll input {
+    display:none;
+  }
+  
+  .group {}
+  
+  .sections {
+    transition: all .4s;
+}
+  .box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  
+  #zubat {
+    background-color: #b23ff5;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_zubat-256.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  #endereco{
+      margin: 100px;
+
+
+  }
+  
+  #psyduck {
+    background-color: #fff800;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_psyduck-256.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #mankey {
+    background-color: #f4d3a2;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_mankey-256.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #caterpie{
+    background-color: #83d839;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-1/135/_caterpie-256.png");
+    background-repeat: no-repeat;
+    background-position: center; 
+  }
+  
+  #snorlax {
+    background-color: #009be8;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/pokemon-go-vol-2/135/_snorlax-256.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #rd_zubat:checked ~ .sections {
+    margin-top: 0vh;
+  }
+  #rd_psyduck:checked ~ .sections {
+    margin-top: -100vh;
+  }
+  #rd_mankey:checked ~ .sections {
+    margin-top: -200vh;
+  }
+  #rd_caterpie:checked ~ .sections {
+    margin-top: -300vh;
+  }
+  #rd_snorlax:checked ~ .sections {
+    margin-top: -400vh;
+  }
+  .link{
+    margin-left: 160px;
+  }
